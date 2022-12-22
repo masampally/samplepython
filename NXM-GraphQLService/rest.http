@@ -1,0 +1,115 @@
+###
+# @server=localhost:5050
+# @server=localhost:5000/graphql
+@server=cs1crm.srlglobal.local
+
+
+@host=cs1dashboard.srlglobal.local
+
+@ws=cs1wsi.srlglobal.local
+
+###
+# login with a specific client
+POST http://{{host}}/graphql HTTP/1.1
+Content-Type: : application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation{
+    login(username:"srl.nas.kranthi.saala", pin :"pass", rsa:"269241")
+}
+# mutation{
+#     login(username:"srl.c2070.kranthi.saala", pin :"pass", rsa:"633458")
+# }
+
+
+###
+# fetch all keywords in client scope
+GET http://{{server}}/crm/c999/keywords?user=srl.nas.kranthi.saala&category=category3
+
+###
+# fetch all keywords in client scope
+GET http://{{server}}/crm/c996/categories?user=srl.nas.kranthi.saala&template=false
+
+###
+# fetch all files within a given folder
+GET http://{{server}}/crm/C996/folders/0/files?user=srl.nas.kranthi.saala&type=file
+
+
+
+###
+# fetch all keywords in client scope
+POST http://localhost:5050/graphql
+Content-Type: application/json
+X-Request-Type: GraphQL
+
+query {
+  getCategories {
+    name,
+    description
+  }
+}
+
+###
+# fetch all keywords in client scope
+POST http://localhost:5050/graphql
+Content-Type: application/json
+X-Request-Type: GraphQL
+
+query {
+  getCategories {
+    name,
+    description
+  }
+}
+
+
+
+
+###
+# put data with params
+PUT http://{{server}}/crm/c996/files/70194477?user=srl.nas.kranthi.saala&name=Report1003112
+content-type: text/plain
+
+
+###
+# Update the widget definition in the storage.
+#
+PUT http://{{server}}/crm/c996/widgets/91?user=srl.kranthi.saala
+Content-Type: application/json
+
+{
+    "widgettype" : "default",
+    "displayname" : "title2",
+    "content" : "content"
+}
+
+###
+# post data with params
+# 
+POST http://{{server}}/crm/c011/folders?user=srldemo.feng.zhu&name=PortfolioOverview&parentid=7056326
+
+
+###
+# post data with json
+# 
+POST http://{{server}}/crm/c996/widgets?user=srldemo.feng.zhu
+Content-Type: application/json
+
+{
+    "pageid" : 7057398,
+    "widgettype" : "csvdata",
+    "displayname" : "title",
+    "content" : "definition"
+}
+
+
+
+###
+GET http://{{ws}}/api/context?token=ADC7DFDD639AD4BA9B80D554E496B10EC701F7784AA15165AC3DA94CD1E36896
+
+
+###
+# Run investment structure only
+# 
+GET http://{{ws}}/api/login?user=srl.nas.kranthi.saala&pin=pass&rsa=217900
+

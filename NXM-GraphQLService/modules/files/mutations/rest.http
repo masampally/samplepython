@@ -1,0 +1,26 @@
+###
+# Server path initialization
+@server=localhost:5000
+# @server=cs1nexusql.srlglobal.local
+
+
+###
+# rename a File request
+POST http://{{server}}/graphql
+Content-Type: application/json
+X-Request-Type: GraphQL
+
+mutation ($token: String!, $uid: String!, $newname: String!) {
+  renameFile(token: $token, uid: $uid, newname: $newname) {
+    succeed,
+    msg,
+    entityId
+  }
+}
+
+{
+  "token" : "asdgnsdfg",
+  "uid" : "12341234",
+  "newname" : "asgfbnsgfr"
+}
+

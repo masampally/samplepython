@@ -1,0 +1,28 @@
+
+@host=ipv4secure.srlglobal.local
+
+### 
+# path
+# call(path, token, headers)
+# 
+POST http://{{host}}/create
+Content-Type: application/json
+
+{​​ 
+"session": "4530737F17534094FBD1D1969BFF85C4424B6C0E0F03E0FC4D7F80BC3FF707CA",
+"ipv4": "172.20.11.111",
+"user_agent": "kranthikumar"
+}​​
+
+### 
+# path
+# call(path, token, headers)
+# 
+POST http://{{host}}/access
+Content-Type: application/json
+
+{​​ 
+"session": "9B3E97BEEEEA5B9A06B88AF9392E13D6F60E389CDE0E83C75B21DAAD6F9E11E8",
+"ipv4": "172.17.0.178",
+"user_agent": "kranthikumar"
+}​​

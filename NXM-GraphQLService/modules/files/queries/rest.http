@@ -1,0 +1,25 @@
+###
+# Server path initialization
+@server=localhost:5050
+# @server=cs1nexusql.srlglobal.local
+
+
+###
+# fetch all files in client scope
+POST http://{{server}}/graphql
+Content-Type: application/json
+X-Request-Type: GraphQL
+
+query {
+  getFileSystem(token: "ADC7DFDD639AD4BA9B80D554E496B10EC701F7784AA15165AC3DA94CD1E36896", folderId: 0) {
+    fileid,
+    folderid,
+    name,
+    # ext,
+    # uploadedby,
+    # uploadedon,
+    # filesize,
+    # path,
+    # description
+  }
+}

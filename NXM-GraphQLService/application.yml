@@ -1,0 +1,32 @@
+redis:
+        master : cs1-redis
+        port: 26379
+        db : 0
+        sentinels : 
+        - 172.16.22.237
+db:
+        servers: 
+        - host='172.16.21.131' dbname='postgres' user='postgres' password='pass' connect_timeout=5
+        - host='172.16.21.130' dbname='postgres' user='postgres' password='pass' connect_timeout=5
+        master: 0
+cisql:
+        url: http://cisql.srlglobal.ld4
+        env: pro1
+service:
+        id: http://cs1nid.srlglobal.local
+        ws: http://cs1wsi.srlglobal.local
+        rw: http://cs1rw.srlglobal.local
+        pdf: http://cs1pdf.srlglobal.local
+        auth: http://cs1auth.srlglobal.local
+        crm: http://cs1crm.srlglobal.local
+        ds: http://cs1ds.srlglobal.local
+        report: http://cs1reportdata.srlglobal.local
+        postfix: http://postfix.srlglobal.ld4
+        mail: http://cs1mailparser.srlglobal.local
+        ipsecure: http://ipv4secure.srlglobal.local
+
+settings:
+        mapping: /graphql
+        debug: false
+        corsEnabled: true
+        exception-handlers-enabled: true

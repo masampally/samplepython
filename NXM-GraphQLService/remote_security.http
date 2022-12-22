@@ -1,0 +1,14 @@
+# 
+@host=cs1wsi.srlglobal.local
+
+###
+# SRL Login
+GET http://{{host}}/api/login?user=srl.c2070.kranthi.saala&pin=pass&rsa=388748
+
+###
+# SRL Logout
+GET http://cs1ws.srlglobal.local/api/logout?token=6E1E20733F9FDFE0DF2A1CCDCEBADB304582440F7A114636377A8AA6237B9B1B
+
+###
+# Check is token vaid
+GET http://cs1ws.srlglobal.local/api/context?token=C04D6A7D2038401C7B7F34BF83B69310A2A1C4D501FC20EAE427A5B141DEED57
